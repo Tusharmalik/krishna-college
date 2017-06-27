@@ -1,0 +1,23 @@
+{% block content %}
+{% load staticfiles %}
+<div class="container" id="content">
+  <h2><b>Vision</b></h2>
+  <p align="justify">{{ vision.vision_text|linebreaks }}</p>
+  <br>
+  <h2><b>Mission</b></h2>
+  <p align="justify">{{ vision.mission_text|linebreaks }}</p>
+  <br>
+  <h3><b>Quality Policy</b></h3><br>
+  <p align="justify"><b>KEC will strive to build and nurture(for the students):</b>
+  <br>
+  <br>
+  <ul>
+  <li>Quality foundation knowledge and core concepts in Engineering.</li><br>
+  <li>A set of soft skills needed from time to time in a dynamic milieu.</li><br>
+  <li>Cross cultural awareness and adaptability as a global player.</li><br>
+  <li>Ability to respond to change effectively be they societal, technological or paradigm shifts in business processes.</li><br>
+  </ul>
+  </p>
+  <br>
+</div>
+{% endblock %}

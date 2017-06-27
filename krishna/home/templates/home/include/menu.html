@@ -1,0 +1,106 @@
+{% block content %}
+{% load staticfiles %}
+<nav class="navbar navbar-default" id="tashan">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <button type="button" class="navbar-toggle collapsed">login</button>
+      <a href="/"><button type="button" class="navbar-toggle collapsed">Home</button></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" id="tashanz">
+      	<li>
+      		<a href="/">Home</a>
+      	</li>
+        <li class="dropdown">
+        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Institute </a>
+        	<ul class="dropdown-menu">
+        	    <li><a href="{% url 'about_institute:overview' %}">Overview</a></li>
+        	    <li><a href="{% url 'about_institute:directors_desk' %}">Director's Desk</a></li>
+        	    <li><a href="{% url 'about_institute:about_management' %}">About Management</a></li>
+        	    <li><a href="{% url 'about_institute:important_functionaries' %}">Important Functionaries</a></li>
+        	    <li><a href="{% url 'about_institute:vision_and_mission' %}">Vision & Mission</a></li>
+        	    <li><a href="{% url 'about_institute:organisation_chart' %}">Organisation Chart</a></li>
+        	    <li><a href="{% url 'about_institute:mandatory_disclosure' %}">Mandatory Disclosures</a></li>
+        	    <li><a href="{% url 'about_institute:aicte_approval' %}">AICTE Approval</a></li>
+        	</ul>
+        </li>
+        <li class="dropdown">
+        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admissions &amp; Registration </a>
+        	<ul class="dropdown-menu">
+        	    <li><a href="pages/admission overview.html">Admission Overview</a></li>
+        	    <li><a href="pages/courses offered.html">Courses Offered</a></li>
+        	    <li><a href="pages/admission procedure.html">Admission Procedure</a></li>
+        	    <li><a href="pages/instr for btech admis.html">Instructions for B.Tech</a></li>
+        	    <li><a href="pages/fee structure.html">Fee Structure</a></li>
+        	    <li><a href="http://admission.krishnacollege.ac.in/Admissionkec.aspx">Registration(2017-18)</a></li>
+        	</ul>
+        </li>
+        <li class="dropdown">
+        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Training & Placement </a>
+			<ul class="dropdown-menu">
+				<li><a href="pages/tp-overview.html">Training &amp; Placement - Overview</a></li>
+				<li><a href="pages/tp-team.html">Training &amp; Placement - Team</a></li>
+				<li><a href="pages/tp-about.html">About Placement Department</a></li>
+				<li><a href="pages/tp-finishing.html">Finishing School</a></li>
+			</ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Departments </a>
+            <ul class="dropdown-menu">
+                <li><a href="pages/applied-science.html">Applied Science</a></li>
+                <li><a href="pages/computer-science.html">Computer Science &amp; Engineering</a></li>
+                <li><a href="pages/electronics.html">Electronics &amp; Communication Engineering</a></li>
+                <li><a href="pages/electrical.html">Electricals &amp; Electronics Engineering</a></li>
+                <li><a href="pages/information-technology.html">Information Technology</a></li>
+                <li><a href="pages/mechanical.html">Mechanical Engineering</a></li>
+                <li><a href="pages/civil.html">Civil Engineering</a></li>
+                <li><a href="pages/humanities.html">Humanities Department</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Campus Life </a>
+            <ul class="dropdown-menu">
+                <li><a href="pages/academic complex.html">Academic Complex</a></li>
+                <li><a href="pages/hostels.html">Hostels</a></li>
+                <li><a href="pages/central library.html">Central Library</a></li>
+                <li><a href="pages/support facilities.html">Support Facilities</a></li>
+                <li><a href="pages/student societies.html">Student Societies</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Career @ KEC</a>
+            <ul class="dropdown-menu">
+                <li><a href="pages/hr-overview.html">About HR</a></li>
+                <li><a href="pages/hr-jobs.html">Apply Now</a></li>
+                <li><a href="pages/hr-events.html">Event Gallery</a></li>
+                <li><a href="pages/hr-resource.html">Knowledge Sharing</a></li>
+                <li><a href="pages/hr-training.html">Training &amp; Development</a></li>
+                <li><a href="pages/hr-team.html">Human Resource Team</a></li>
+                <li><a href="pages/hr-faqs.html">HR-FAQs</a></li>
+                <li><a href="pages/hrref.html">Employee Referrals</a></li>
+            </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right menu">
+        {% if request.user.is_authenticated %}
+            <li><a href=" url "logout" %}">Sign out</a></li>
+        {% else %}
+            <li><a href=" url "login" %}">Sign in</a></li>
+        {% endif %}
+      </ul>
+
+
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+{% endblock %}

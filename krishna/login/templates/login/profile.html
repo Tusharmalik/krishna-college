@@ -1,0 +1,179 @@
+{% extends 'header.html' %}
+
+{% block title %}profile{% endblock %}
+
+{% block content %}
+{% include "home/include/header.html" %}
+{% include "home/include/menu.html" %}
+
+<div class="container" id="content">
+   <h2 class="text-center">{{ user.first_name }}</h2>
+
+   <div class="row">
+     <div class="col-md-3"> <!-- Picture of Faculty -->
+       <img src="../{{ user.userprofile.image }}" class="img-responsive beechme">
+     </div>
+     <div class="col-md-9">
+       <div class="table-responsive">
+         <table class="table table-bordered table-hover">
+           <tr>
+             <th>Name</th>
+             <td>{{ user.first_name }} {{ user.last_name }}</td>
+           </tr>
+           <tr>
+             <th>Designation</th>
+             <td>{{ user.userprofile.designation }}</td>
+           </tr>
+           <tr>
+             <th>Department</th>
+             <td>{{ user.userprofile.department }}</td>
+           </tr>
+           <tr>
+             <th>Email</th>
+             <td>{{ user.email }}</td>
+           </tr>
+         </table>
+         </div>
+     </div>
+   </div>
+
+
+   <div class="row">
+     <div class="col-md-10 col-md-push-1">
+       <div class="table-responsive">
+       <table class="table table-bordered table-hover">
+         <tr>
+           <th>
+
+           </th>
+           <th>
+             Specialization
+           </th>
+           <th>
+             Year of passing
+           </th>
+           <th>
+             University/Inst.
+           </th>
+           <th>
+             Remarks
+           </th>
+         </tr>
+
+         <tr>
+           <th>
+             M.Tech
+           </th>
+           <td>
+             {{ user.userprofile.masters_specialization }}
+           </td>
+           <td>
+             {{ user.userprofile.masters_year }}
+           </td>
+           <td>
+             {{ user.userprofile.masters_university }}
+           </td>
+           <td></td>
+         </tr>
+
+         <tr>
+           <th>
+             B.Tech/B.E.
+           </th>
+           <td>
+             {{ user.userprofile.btech_specialization }}
+           </td>
+           <td>
+             {{ user.userprofile.btech_year }}
+           </td>
+           <td>
+             {{ user.userprofile.btech_university }}
+           </td>
+           <td></td>
+         </tr>
+       </table>
+     </div>
+     </div>
+   </div>
+
+   <div class="row">
+     <div class="col-md-10 col-md-push-1">
+      <h2>Professional Experience</h2>
+       <table class="table table-bordered table-hover">
+         <tr>
+           <th>Teaching</th>
+           <th>Industry</th>
+           <th>Research</th>
+         </tr>
+
+         <tr>
+           <td>{{ user.userprofile.teaching_experience }} Years</td>
+           <td>{{ user.userprofile.industry_experience }} Years</td>
+           <td>{{ user.userprofile.research_experience }} Years</td>
+         </tr>
+       </table>
+     </div>
+   </div>
+
+   <div class="row">
+     <div class="col-md-10 col-md-push-1">
+       <h2>Research Interests</h2>
+       {{ user.userprofile.research_interest|linebreaks }}
+     </div>
+   </div>
+
+   <div class="row">
+     <div class="col-md-10 col-md-push-1">
+       <h2>Teaching Interests</h2>
+       <pre>
+          {{ user.userprofile.teaching_interest|linebreaks }}
+
+       </pre>
+     </div>
+   </div>
+<!--
+   <div class="row">
+     <div class="col-md-10 col-md-push-1">
+       <h2>Academic/Professional Affiliations</h2>
+
+     </div>
+   </div>
+-->
+   <div class="row">
+     <div class="col-md-10 col-md-push-1">
+       <h2>Publications</h2>
+
+       <b>No. of Research Publications: {{ user.userprofile.research_paper_published }}</b>
+
+     </div>
+   </div>
+<!--
+   <div class="row">
+     <div class="col-md-10 col-md-push-1">
+       <h2>Workshop/Seminar/FDP/ Summer School (Attended/ Organized)</h2>
+       <ol>
+
+
+     </div>
+   </div>
+
+   <div class="row">
+     <div class="col-md-10 col-md-push-1">
+       <h2>National and International Recognition</h2>
+
+     </div>
+   </div>
+-->
+<br>
+
+   <div class="row well">
+     <div class="col-md-12">
+       <h3>Executive Summary (About Self)</h3>
+
+         <p align="justify">{{ user.userprofile.summary|linebreaks }}
+         </p>
+     </div>
+   </div>
+
+</div>
+{% endblock %}

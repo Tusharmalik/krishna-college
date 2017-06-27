@@ -1,0 +1,47 @@
+{% block content %}
+{% load static %}
+<div class="container" id="content">
+<h1>{{ management.heading }}</h1>
+<div class="row">
+    <div class="col-md-5" align="justify">
+      {{ management.paragraph|linebreaks }} <br>
+   <img src="{% static 'img/management.jpg' %}" class="img-responsive"></img>
+   </div>
+<div class="col-md-7">
+   <table class="table table-striped table-bordered">
+   <tr>
+   <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle><b>Chairman</b></td>
+   <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle>{{ management.chairman_name }}<br>
+{{ management.chairman_position }}</td>
+   </tr>
+   <tr>
+   <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle><b>Vice Chairman</b></td>
+   <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle>   {{ management.vice_chairman_name }}<br>
+{{ management.vice_chairman_position }}</td>
+   </tr>
+   <tr>
+   <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle><b>Secretary</b></td>
+   <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle>{{ management.secretary_name }}<br>
+{{ management.secretary_position }}</td>
+   </tr>
+   <tr>
+   <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle><b>Treasurer</b></td>
+   <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle>{{ management.treasurer_name }}<br>
+{{ management.treasurer_position }}</td>
+   </tr>
+   <tr>
+   <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle><b>Advisor</b></td>
+   <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle>{{ management.advisor_name }}<br>
+{{ management.advisor_position }}</td>
+   </tr>
+   <tr>
+   <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle><b>Director</b></td>
+   <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle>{{ management.director_name }}<br>
+{{ management.director_position }}</td>
+   </tr>
+   </table>
+  </div>
+</div><br>
+</div>
+
+{% endblock %}

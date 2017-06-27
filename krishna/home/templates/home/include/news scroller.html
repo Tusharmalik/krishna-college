@@ -1,0 +1,44 @@
+{% block content %}
+{% load staticfiles %}
+<!--News scroller-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <button class="btn btn-primary btn-block" id="button_of_payment">Online Fee Payment</button>
+            </div>
+                <div id="modal_bana_raha_hu" class="modal" style="padding: 100px;">
+                  <!-- Modal content -->
+                  <div class="modal-content modal-sm">
+                    <div class="modal-body">
+                        <a href="https://smarthubeducation.hdfcbank.com/SmartFees/Landing.action?instId=KECGZB" target="_blank"><button class="btn btn-primary btn-block">Through HDFC Bank</button></a>
+                        <a href=" https://paytm.com/education?op=Krishna%20Engineering%20College&location=Ghaziabad" target="_blank"><button class="btn btn-primary btn-block">Through PayTm</button></a>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" id="closetab" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                <h4 style="color: #bf2b29">
+                 <marquee onmouseover="this.stop();" onmouseout="this.start();">
+                    <span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Congratulation to KEC Students for winning Project Expo-2017 at MIET, Meerut
+                    <span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Congratulation to Himanshu Joshi & Deepak Gangwani for Second Prize in SWARAGINI and DIGITAL ART at KIET, Muradnagar
+                    <span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Congratulation to Vishal Rana and Mohd. Faraz Khan for GOLD Medal in BADMINTON and TABLE TENNIS at ABES
+                    <span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Congratulation to VOLLEY-BALL Team and FOOT-BALL Team for BRONZE Medal at ABES 
+                    <!--<span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Academic Calendar Uploaded for Even Semester 2016-17-->
+                    <span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Congratulations to Ms. Priyanka Vashistha, CSE Branch for getting 3rd Rank in University Topper List
+                 </marquee>
+                 </h4>
+            </div>
+            <div class="col-md-3 text-center">
+                <a href="https://www.facebook.com/KECGZB" target="_blank"><img src="{% static 'img/facebook.png' %}" height="30px"></a>
+                <a href="http://youtube.com/c/KECGhaziabadOfficial" target="_blank"><img src="{% static 'img/youtube.png' %}" height="30px"></a>
+                <a href="http://google.com/+KECGhaziabadOfficial" target="_blank"><img src="{% static 'img/google_plus.png' %}" height="30px"></a>
+                <a href="https://twitter.com/KrishnaCollege" target="_blank"><img src="{% static 'img/twitter.png' %}" height="30px"></a>
+                <a href="http://in.linkedin.com/pub/krishna-engineering-college-official-page/ab/197/620" target="_blank"><img src="{% static 'img/linkedin.png' %}" height="30px"></a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

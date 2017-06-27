@@ -1,0 +1,57 @@
+{% load static %}
+{% block content %}
+
+  <!-- Modal -->
+  <div class="modal fade" id="tushar" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body" id="hello">
+
+          <div class ="main-container">
+
+          <div class=" highlight" style="margin-left:0;">
+          <h1><strong>What's New</strong></h1>
+            <div class="row">
+
+
+                  <img src ="{% static 'img/logo.png' %}" />
+                  <ul>
+                    {% for highlight in highlight %}
+                    {% if highlight.url %}
+                    <li><a href="{{ highlight.url }}" target="_blank"><span class="blinker {% autoescape off %}{% cycle 'blinker1' 'blinker2' %}{% endautoescape %}">{{ highlight.title }}</span></a></li>
+                    {% elif highlight.upload %}
+                    <li><a href="{{ highlight.upload }}" target="_blank"><span class="blinker {% autoescape off %}{% cycle 'blinker1' 'blinker2' %}{% endautoescape %}">{{ highlight.title }}</span></a></li>
+                    {% else %}
+                    <li><a href="#" target="_blank"><span class="blinker {% autoescape off %}{% cycle 'blinker1' 'blinker2' %}{% endautoescape %}">{{ highlight.title }}</span></a></li>
+                    {% endif %}
+                    {% endfor %}
+                  </ul>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+		  <p style="text-align: center;color: red;" id="Foo"><font size="5">* Congratulations Students and Faculty *</font></p>
+          <a href="https://drive.google.com/open?id=1uUYaLH8VHjI7HUJYvu8u4xM8xhJT4tQu40dJZIWWqTo" target="_blank"><p style="text-align: center;color: red;"><font size="5">Registration form for FDP on Electromagnatic Field Theory</font></p></a>
+          <a href="http://admission.krishnacollege.ac.in/Admissionkec.aspx" target="_blank"><p style="text-align: center;color: red;" ><font size="5">Registration open for Admission (session 2017-18) </font></p></a>
+
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+          </div>
+        </div>
+
+      </div>
+{% endblock %}
+
+<script>
+var blink_speed = 500; // every 1000 == 1 second, adjust to suit
+var t = setInterval(function () {
+    var ele = document.getElementById('Foo');
+    //var el = document.getElementById('Foo1');
+    ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
+    //el.style.visibility = (el.style.visibility == 'hidden' ? '' : 'hidden');
+}, blink_speed);
+</script>

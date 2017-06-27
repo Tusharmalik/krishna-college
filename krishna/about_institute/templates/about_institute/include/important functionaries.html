@@ -1,0 +1,25 @@
+{% block content %}
+{% load staticfiles %}
+<div class="container" id="content">
+    <center><h1>Important Functionaries</h1></center>
+<table class="table table-striped table-responsive table-bordered">
+      <tr>
+          <td  align="center" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" valign=middle><b>S.No.</b></td>
+            <td  align="center" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" valign=middle><b>Name</b></td>
+            <td  align="center" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" valign=middle><b>Designation</b></td>
+            <td  align="center" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" valign=middle><b>Email</b></td>
+            <td  align="center" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" valign=middle><b>Contact No.</b></td>
+        </tr>
+      {% for fun in functionaries %}
+      <tr>
+          <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle>{{ forloop.counter }}</td>
+            <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle>{{ fun.Name }}</td>
+            <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle>{{ fun.designation }}</td>
+            <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle><a href="mailto:{{ fun.email }}">{{ fun.email }}</a></td>
+            <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-left: 5px;" height="33" align="left" valign=middle>{{ fun.contact_no }}</td>
+        </tr>
+      {% endfor %}
+
+    </table><br><br>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% load static %}
+{% block content %}
+<div class="container" id="content">
+	<h2 class="well well-sm">Notice Board</h2>
+	 <!-- Tab panes -->
+	 <div class="tab-content">
+		 <div role="tabpanel" class="tab-pane active" id="all">
+			<table class="table table-responsive table-bordered table-striped">
+			 	<tr><th>Date</th> <th>Title</th> </tr>
+				 	<tr>
+              {% for notice in all_notice %}
+                <td>{{ notice.pub_date }}</td> <td><a href='{{ notice.upload }}'>{{ notice.title }} </a></td>
+              {% endfor %}
+          </tr>
+			</table>
+		 </div>
+
+		 </div>
+	 </div>
+{% endblock %}

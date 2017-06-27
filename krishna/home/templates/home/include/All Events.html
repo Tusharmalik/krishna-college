@@ -1,0 +1,25 @@
+{% load static %}
+{% block content %}
+<div class="container" id="content">
+	<h2 class="well well-sm">Events</h2>
+	 <!-- Tab panes -->
+	 <div class="tab-content">
+		 <div role="tabpanel" class="tab-pane active" id="all">
+			<table class="table table-responsive table-bordered table-striped">
+			 	<tr> <th>Title</th> <th>Date</th> </tr>
+				 	<tr>
+            {% for event in all_event %}
+            {% if event.url %}
+            <td><a href='{{ event.url }}'>{{ event.title }}</a></td> <td>{{ event.pub_date }}</td>
+            {% elif event.upload %}
+            <td><a href='{{ event.upload }}'>{{ event.title }}</a></td> <td>{{ event.pub_date }}</td>
+            {% else %}
+            <td><a href='#'>{{ event.title }}</a></td> <td>{{ event.pub_date }}</td>
+            {% endif %}
+            {% endfor %}
+          </tr>
+      </table>
+		 </div>
+		 </div>
+	 </div>
+{% endblock %}

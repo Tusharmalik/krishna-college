@@ -1,0 +1,22 @@
+{% block content %}
+{% load staticfiles %}
+<div class="container" id="content">
+  <br>
+<div class="row">
+  <div class="col-md-4">
+    <div align="center"><img src="../../{{ director.image }}" class="img-responsive" width="250"></img></div>
+    </div>
+    <div class="col-md-8">
+    <p align="justify">
+{% if director.director_name_link %}
+<a href="{{ director.director_name_link }}"><b><u>{{ director.director_name }}</u></a> &nbsp;&nbsp;(Director - KEC )</b><br><br>
+{% else %}
+<a href="{% url 'about_institute:director' %}"><b><u>{{ director.director_name }}</u></a> &nbsp;&nbsp;(Director - KEC )</b><br><br>
+{% endif %}
+{{ director.paragraph|linebreaks }}
+    </div>
+
+<br>
+</div><br><br>
+</div>
+{% endblock %}

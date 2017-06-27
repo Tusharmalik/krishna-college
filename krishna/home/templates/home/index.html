@@ -1,0 +1,44 @@
+{% extends "header.html" %}
+{% load static %}
+{% block content %}
+	{% include "home/include/highlights.html" %}
+	{% include "home/include/header.html" %}
+	{% include "home/include/menu.html" %}
+	{% include "home/include/news scroller.html" %}
+	<div class="container space">
+		<div class="row parent">
+	{% include "home/include/slideshow.html" %}
+	{% include "home/include/notice board.html" %}
+		</div>
+	</div>
+	<div class="container space">
+  <div class="row parent">
+	{% include "home/include/about kec.html" %}
+	{% include "home/include/events.html" %}
+	</div>
+	</div>
+	{% include "home/include/footer.html" %}
+
+{% endblock %}
+
+
+{% block domready %}
+$("#tushar").modal("show");
+
+$(function () {
+						var x;
+						setInterval(function () {
+								if (x == 0) {
+										$('.blinker1').css('color', '#00ff7f');
+										$('.blinker2').css('color', '#FFFFFF');
+										x = 1;
+								} else {
+										if (x = 1) {
+												$('.blinker1').css('color', '#FFFFFF');
+												$('.blinker2').css('color', '#00ff7f');
+												x = 0;
+										}
+								}
+						}, 500);
+				});
+{% endblock %}

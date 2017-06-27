@@ -1,0 +1,24 @@
+{% load staticfiles %}
+{% if latest_question_list %}
+	<div class="col-md-4 col-lg-4">
+		<div class="card floatLeft">
+			<div class="card-header">
+				<h3><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Notice Board</h3>
+			</div>
+			<div class="list-group card-content" style="margin-bottom: 0 " id="noticeboard">
+				{% for question in latest_question_list %}
+				{% if question.upload %}
+				<a href="{{ question.upload }}" class="list-group-item">{{ question.title }}</a>
+				{% else %}
+	      <a href="#" class="list-group-item">{{ question.title }}</a>
+	      {% endif %}
+				{% endfor %}
+            </div>
+            <div class="card-footer">
+            	<a href="{% url 'home:notice' %}" target="_blank" class="btn btn-large btn-block btn-info" role="button">View All Notices</a>
+            </div>
+		</div>
+	</div>
+{% else %}
+	<p>No Notice are available.</p>
+{% endif %}

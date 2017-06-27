@@ -1,0 +1,26 @@
+{% load static %}
+{% block content %}
+<div class="col-md-8" id="carousel">
+  <div class="w3-content w3-section" style="max-width:750px; max-height:400px">
+    {% for image in Slide %}
+  <img class="mySlides" src="{{ image.upload }}" style="width:100%">
+  {% endfor %}
+</div>
+</div>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+{% endblock %}
