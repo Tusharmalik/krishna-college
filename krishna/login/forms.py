@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import UserProfile
+from .models import TeacherProfile, StudentProfile
 #from .models import UserProfile
 
 class RegistrationForm(UserCreationForm):
@@ -55,7 +55,7 @@ class RegistrationForm(UserCreationForm):
 
 class ProfileForm(forms.ModelForm):
 	class Meta:
-		model = UserProfile
+		model = TeacherProfile
 		fields = (
 				'designation',
 				'department',
